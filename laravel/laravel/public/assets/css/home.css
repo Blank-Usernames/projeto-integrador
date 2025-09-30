@@ -1,0 +1,154 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#homeTitle {
+    text-align: center;
+    font-size: 3.5em;
+    padding: 5rem;
+}
+
+/* Barra de Pesquisa */
+.searchTitle {
+    margin: 1.5rem;
+}
+
+.searchPlace {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    margin: 5rem auto;
+}
+
+input.form-control {
+    transition: box-shadow 0.3s ease;
+}
+
+input.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+    /* verde suave */
+}
+
+#comercioLink {
+  display: block;
+  text-align: center;
+  margin: 1rem;
+  font-size: 1.5rem;
+}
+
+/* Cartas de Comércio*/
+.placeCards {
+    margin-top: 1.5rem;
+}
+
+.comercio-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(230, 76, 15, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.comercio-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.card {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.btn-comercio {
+    display: inline-block;
+    background-color: #752d0b;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+    border: none;
+}
+
+.btn-comercio:hover {
+    background-color: #F16F33;
+}
+
+.badge-comercio {
+    background-color: #F16F33;
+    color: #fff;
+    font-weight: 500;
+}
+
+/* Card Modal */
+.modal-content {
+  border: none;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+.modal-body ul li {
+  margin-bottom: 4px;
+}
+
+.comercio-img-top {
+  height: 250px;
+  object-fit: cover;
+}
+
+
+@media (max-width: 768px) {
+    #homeTitle {
+    padding: 2rem;
+    font-size: 3rem;
+    }
+
+  .searchContainer h1,
+  .searchTitle {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .searchPlace form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .searchPlace input.form-control {
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+
+  .searchPlace button {
+    width: 100%;
+  }
+
+  /* Cards */
+  .placeCards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .placeCards .card {
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+  
+  .card-img-top {
+    height: 150p

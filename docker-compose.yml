@@ -1,0 +1,61 @@
+services:
+  
+  web:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    working_dir: /var/www/html/laravel/
+    container_name: web
+    ports:
+      - 5000:80
+    volumes:
+      - ./laravel:/var/www/html/
+
+  db:
+    image: mysql:8 # imagem do docker hub escolhida
+    platform: linux/x86_64 # SO escolhido para o banco
+    restart: unless-stopped # serviço sempre reiniciado
+    container_name: db # nome do serviço
+    environment:
+        MYSQL_DATABASE: estetica_t99
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_PASSWORD: 1234
+        MYSQL_USER: t99
+    volumes: # pastas espelhadas no container
+        - mysql:/var/lib/mysql
+    ports: # portas de acesso
+        - "3308:3306"
+
+  # PHPmyAdmin - Permite ver e manipular o banco de dados
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - ${PHPMYADMIN_PORT_DB:-8080}:80
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=${DB_HOST:-db}
+      - PMA_USER=${DB_USERNAME:-root}
+      - PMA_PASSWORD=${DB_PASSWORD:-root}
+      - UPLOAD_LIMIT= 51200000
+  
+  node:
+    image: node:18
+    working_dir: /var/www/html
+    volumes:
+      - ./laravel:/var/www/html/
+    command: sh -c "npm install && npm run dev"
+
+  # https://ashkiani.github.io/sql-injection-playground/
+  # Container para testes de segurança http://127.0.0.1:7443/WebGoat
+  # usuario e senha: guest
+  # webgoat:
+  #   image: webgoat/webgoat
+  #   container_name: webgoat
+  #   restart: unless-stopped
+  #   ports:
+  #     - "7443:8080"
+    
+
+volumes:
+  mysql:  

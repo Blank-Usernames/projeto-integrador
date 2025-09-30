@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FORMULÁRIO CADASTRO */
+
+.default-feedback {
+    color: dimgrey;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: .875em;
+}
+
+.hide {
+    display: none;
+}
+
+.btn-custom {
+    background-color: #E64C0F; 
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
+.btn-custom:hover {
+    background-color: #cc440d;
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+main {
+    padding: 10rem;
+    margin-bottom: 12.5rem;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 2rem;
+  }
+
+  .btn-custom {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+
+  footer {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .navbar-brand img {
+    height: 3rem;
+    width: auto;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .modal-dialog {
+    margin: 1rem;
+  }
+}

@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    margin: 5rem auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin: 10px;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin-top: 3rem;
+}
+
+p {
+    line-height: 2em;
+    font-size: 1em;
+    margin-bottom: 2rem;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 2rem;
+}
+
+ul.SobreInfo li {
+    background: #F16F33;
+    color: white;
+    font-weight: bold;
+    width: 40%;
+    padding: 10px 15px;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    transition: all 0.5s ease-in-out;
+}
+
+ul.SobreInfo li:hover {
+    transform: scale(1.1);
+}
+
+.parallax {
+    background-image:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+        url('https://images.unsplash.com/photo-1556740749-887f6717d7e4');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 20px;
+    border-radius: 4px;
+}
+
+
+.parallax h1,
+.parallax h2,
+.parallax h3,
+.parallax p {
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    ul.SobreInfo li {
+        width: 80%;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+}
