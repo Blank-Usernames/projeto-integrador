@@ -19,21 +19,22 @@ emailInput.addEventListener("input", function () {
     this.classList.remove("is-invalid");
 });
 
-// Validação para nome
+// Validação para nome (não ter caractére especial)
 const nomeInput = document.getElementById("nome");
 
 nomeInput.addEventListener("blur", function () {
     const valorNome = this.value.trim();
+    const regexNome = /^[A-Za-z0-9]+$/;
 
-    if (valorNome == "") {
+    if (valorNome === "" || !regexNome.test(valorNome)) {
         this.classList.add("is-invalid");
         this.classList.remove("is-valid");
     } else {
         this.classList.remove("is-invalid");
         this.classList.add("is-valid");
     }
-
 });
+
 
 nomeInput.addEventListener("input", function () {
     // Remove o erro enquanto o usuário digita

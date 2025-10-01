@@ -6,20 +6,69 @@ Inputmask({ "mask": "(99) 99999-9999" }).mask(document.getElementById("contato")
 // Validação para nome
 const nomeInput = document.getElementById("nome");
 
+// Máscara: primeira letra maiúscula
+nomeInput.addEventListener("input", function () {
+    let nomeUpperCase = this.value;
+
+    // Coloca a primeira letra em maiúscula
+    if (nomeUpperCase.length > 0) {
+        nomeUpperCase = nomeUpperCase
+            .toLowerCase()
+            .split(' ')
+            .map(palavra => palavra.charAt(0).toUpperCase() + palavra.slice(1))
+            .join(' ');
+    }
+
+    this.value = nomeUpperCase;
+});
+
 nomeInput.addEventListener("blur", function () {
     const valorNome = this.value.trim();
+    const regexNome = /^[A-Za-zÀ-ÖØ-öø-ÿ0-9 ]+$/;
 
-    if (valorNome == "") {
+    if (valorNome === "" || !regexNome.test(valorNome)) {
         this.classList.add("is-invalid");
         this.classList.remove("is-valid");
     } else {
         this.classList.remove("is-invalid");
         this.classList.add("is-valid");
     }
-
 });
 
 nomeInput.addEventListener("input", function () {
+    // Remove o erro enquanto o usuário digita
+    this.classList.remove("is-invalid");
+});
+
+// Validação para serviço
+const servicoInput = document.getElementById("servico");
+
+// Máscara: primeira letra maiúscula
+servicoInput.addEventListener("input", function () {
+    let servicoUpperCase = this.value;
+
+    // Coloca a primeira letra em maiúscula e o restante em minúscula
+    if (servicoUpperCase.length > 0) {
+        servicoUpperCase = servicoUpperCase.charAt(0).toUpperCase() + servicoUpperCase.slice(1).toLowerCase();
+    }
+
+    this.value = servicoUpperCase;
+});
+
+servicoInput.addEventListener("blur", function () {
+    const valorServico = this.value.trim();
+    const regexServico = /^[A-Za-zÀ-ÖØ-öø-ÿ]+$/;
+
+    if (valorServico === "" || !regexServico.test(valorServico)) {
+        this.classList.add("is-invalid");
+        this.classList.remove("is-valid");
+    } else {
+        this.classList.remove("is-invalid");
+        this.classList.add("is-valid");
+    }
+});
+
+servicoInput.addEventListener("input", function () {
     // Remove o erro enquanto o usuário digita
     this.classList.remove("is-invalid");
 });
@@ -81,6 +130,22 @@ cidadeInput.addEventListener("input", function () {
 // Validação para bairro
 const bairroInput = document.getElementById("bairro");
 
+// Máscara: primeira letra maiúscula
+bairroInput.addEventListener("input", function () {
+    let bairroUpperCase = this.value;
+
+    // Coloca a primeira letra em maiúscula
+    if (bairroUpperCase.length > 0) {
+        bairroUpperCase = bairroUpperCase
+            .toLowerCase()
+            .split(' ')
+            .map(palavra => palavra.charAt(0).toUpperCase() + palavra.slice(1))
+            .join(' ');
+    }
+    
+    this.value = bairroUpperCase;
+});
+
 bairroInput.addEventListener("blur", function () {
     const valorBairro = this.value.trim();
 
@@ -101,6 +166,22 @@ bairroInput.addEventListener("input", function () {
 
 // Validação para Rua & N°
 const ruaInput = document.getElementById("ruaNome");
+
+// Máscara: primeira letra maiúscula
+ruaInput.addEventListener("input", function () {
+    let ruaUpperCase = this.value;
+
+    // Coloca a primeira letra em maiúscula
+    if (ruaUpperCase.length > 0) {
+        ruaUpperCase = ruaUpperCase
+            .toLowerCase()
+            .split(' ')
+            .map(palavra => palavra.charAt(0).toUpperCase() + palavra.slice(1))
+            .join(' ');
+    }
+    
+    this.value = ruaUpperCase;
+});
 
 ruaInput.addEventListener("blur", function () {
     const valorRua = this.value.trim();
@@ -188,23 +269,23 @@ let imagemValida = imagemInput.files.length > 0;
 
 form.addEventListener('submit', function (event) {
 
-  if (!form.checkValidity() || !imagemValida) {
-    event.preventDefault();
-    event.stopPropagation();
+    if (!form.checkValidity() || !imagemValida) {
+        event.preventDefault();
+        event.stopPropagation();
 
-    // Feedback visual para imagem
-    if (!imagemValida) {
-      imagemInput.classList.add('is-invalid');
+        // Feedback visual para imagem
+        if (!imagemValida) {
+            imagemInput.classList.add('is-invalid');
+        } else {
+            imagemInput.classList.remove('is-invalid');
+            imagemInput.classList.add('is-valid');
+        }
     } else {
-      imagemInput.classList.remove('is-invalid');
-      imagemInput.classList.add('is-valid');
+        imagemInput.classList.remove('is-invalid');
+        imagemInput.classList.add('is-valid');
     }
-  } else {
-    imagemInput.classList.remove('is-invalid');
-    imagemInput.classList.add('is-valid');
-  }
 
-  form.classList.add('was-validated');
+    form.classList.add('was-validated');
 });
 
 
@@ -228,9 +309,9 @@ document.getElementById("imagemComercio").addEventListener("change", function ()
 
 // Limitação do tamanho da imagem
 if (imagemValida && imagemInput.files[0].size > 2 * 1024 * 1024) {
-  imagemValida = false;
-  imagemInput.classList.add('is-invalid');
-  imagemInput.nextElementSibling.textContent = "A imagem deve ter no máximo 2MB.";
+    imagemValida = false;
+    imagemInput.classList.add('is-invalid');
+    imagemInput.nextElementSibling.textContent = "A imagem deve ter no máximo 2MB.";
 }
 
 

@@ -19,9 +19,9 @@
                     </div>
                     <div class="mb-3">
                         <label for="nome" class="form-label" style="font-weight: bolder;">Nome</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Seu nome completo" required>
+                        <input type="text" class="form-control" id="nome" placeholder="Seu nome ou da empresa" required>
                         <div class="invalid-feedback">
-                            Formato inválido. Insira um nome (Ex: Fulano Beltrano Ciclano).
+                            Formato inválido. Insira um nome (Ex: FulanoBeltrano ou EmpresaComercialLTDA).
                         </div>
                     </div>
                     <div class="mb-3">
@@ -61,7 +61,8 @@
                 </form>
             </div>
         </section>
-    </main>
+</main>
+
 
 <script src="../public/assets/js/cadastro.js"></script>
 

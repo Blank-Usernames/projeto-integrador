@@ -19,7 +19,7 @@
         <nav class="navbar navbar-expand-lg"
             style="background-image: linear-gradient(to bottom, var(--cor01),var(--cor02));">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html" style="height: 4rem; width: 3rem;"><img
+                <a class="navbar-brand" href="{{route('home')}}" style="height: 4rem; width: 3rem;"><img
                         src="../public/assets/src/NextShop-White.png" alt="Logo"></a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -31,18 +31,18 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav flex-row">
                         <li class="nav-item me-3">
-                            <a class="nav-link" aria-current="page" href="index.html"><i
+                            <a class="nav-link" aria-current="page" href="{{route('home')}}"><i
                                     class="bi bi-house-fill m-1"></i>Início</a>
                         </li>
                         <li class="nav-item me-3">
-                            <a class="nav-link" href="sobre.html"><i class="bi bi-info-circle-fill m-1"></i>Sobre</a>
+                            <a class="nav-link" href="{{route('sobre')}}"><i class="bi bi-info-circle-fill m-1"></i>Sobre</a>
                         </li>
                     </ul>
 
                     <div class="d-flex">
                         <button type="button" class="btn btn-light m-2 btn-primary" data-bs-toggle="modal"
                             data-bs-target="#loginModal" id="loginButton">Entrar</button>
-                        <a href="cadastro.html"><button type="button" class="btn btn-light m-2"
+                        <a href="{{route('cadastro')}}"><button type="button" class="btn btn-light m-2"
                                 id="signupButton">Cadastro</button>
                         </a>
                     </div>
