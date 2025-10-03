@@ -1,0 +1,116 @@
+@charset ("UTF-8");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* FORMULÁRIO CRUD */
+
+.default-feedback {
+  color: dimgrey;
+  width: 100%;
+  margin-top: .25rem;
+  font-size: .875em;
+}
+
+.hide {
+  display: none;
+}
+
+.btn-custom {
+  background-color: #E64C0F;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+
+.btn-cancel {
+  background-color: #6C757D;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+
+.btn-outline-delete {
+  color: #DC3545;
+  border: 1px solid #DC3545;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 8px;
+  margin-top: 1rem;
+  width: auto;
+}
+
+.btn-custom:hover {
+  background-color: #CC440D;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-cancel:hover {
+  background-color: #5C636A;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-outline-delete:hover {
+  background-color: #DC3545;
+  color: #fff;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+main {
+  padding: 10rem;
+  margin-bottom: 12.5rem;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 2rem;
+  }
+
+  .buttonsContainer {
+    flex-direction: column;
+  }
+
+  .btn-custom {
+    width: 100%;
+    padding: 0.55rem;
+    font-size: 1rem;
+  }
+
+  .btn-cancel {
+    width: 100%;
+    padding: 0.55rem;
+    font-size: 1rem;
+  }
+
+  footer {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .navbar-brand img {
+    height: 3rem;
+    width: auto;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .modal-dialog {
+    margin: 1rem;
+  }
+}

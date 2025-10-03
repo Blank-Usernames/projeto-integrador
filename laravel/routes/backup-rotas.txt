@@ -25,3 +25,7 @@ Route::get('/cadastro_comercio', function () {
 Route::get('/configurar_comercio', function () {
     return view('configurar');
 })->name('configurar');
+
+Route::get('/editar_usuario', function () {
+    return view('editar');
+})->name('editar');

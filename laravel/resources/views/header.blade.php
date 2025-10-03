@@ -37,6 +37,9 @@
                         <li class="nav-item me-3">
                             <a class="nav-link" href="{{route('sobre')}}"><i class="bi bi-info-circle-fill m-1"></i>Sobre</a>
                         </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link" href="{{route('editar')}}"><i class="bi bi-person-fill m-1"></i>Minha Conta</a>
+                        </li>
                     </ul>
 
                     <div class="d-flex">

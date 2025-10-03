@@ -9,7 +9,8 @@
         <section class="formUsuario">
             <div class="container mt-5">
                 <h2 class="mb-4">Cadastro de Usuário</h2>
-                <form method="POST" action="{{route('register')}}">
+                <form method="POST" action="{{route('cadastro.store')}}">
+                    @csrf
                     <div class="mb-3">
                         <label for="email" class="form-label" style="font-weight: bolder;">E-mail</label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="seuemail@exemplo.com" required>

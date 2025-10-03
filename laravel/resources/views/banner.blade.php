@@ -40,7 +40,7 @@
                 <small style="font-size: 0.6em; color: #666;">É rápido, gratuito e você começa a explorar em
                     segundos.</small>
             </div>
-            <a href="cadastro.html">
+            <a href="{{route('cadastro')}}">
                 <button type="button" class="btn btn-light btn-lg m-2"
                     style="background-color: var(--cor01); color: #FFFFFF; font-size: 0.8em;">Cadastre-se
                 </button>

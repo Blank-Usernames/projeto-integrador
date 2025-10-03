@@ -19,9 +19,13 @@ Route::get('/sobre', function () {
     return view('sobre');
 })->name('sobre');
 
+/* CADASTRO DE USUÁRIO */ 
 Route::get('/cadastro_usuario', function () {
     return view('cadastro');
 })->name('cadastro');
+
+Route::post('/cadastro', [UserController::class, 'store'])->name('cadastro.store');
+/* CADASTRO DE USUÁRIO */ 
 
 Route::get('/cadastro_comercio', function () {
     return view('comercio');
@@ -30,6 +34,10 @@ Route::get('/cadastro_comercio', function () {
 Route::get('/configurar_comercio', function () {
     return view('configurar');
 })->name('configurar');
+
+Route::get('/editar_usuario', function () {
+    return view('editar');
+})->name('editar');
 
 // Breeze
 
