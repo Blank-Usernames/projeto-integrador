@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Support\Facades\Route;
 
 // Rotas
@@ -9,11 +11,9 @@ Route::get('/', function () {
     return view('banner');
 })->name('home');
 
-/* !! PROVISÓRIO !! */
 Route::get('/home', function () {
     return view('home');
-});
-/* !! PROVISÓRIO !! */
+})->middleware('auth')->name('home');
 
 Route::get('/sobre', function () {
     return view('sobre');
@@ -27,6 +27,10 @@ Route::get('/cadastro_usuario', function () {
 Route::post('/cadastro', [UserController::class, 'store'])->name('cadastro.store');
 /* CADASTRO DE USUÁRIO */ 
 
+/* LOGIN DE USUÁRIO*/
+Route::post('/login-custom', [UserController::class, 'login'])->name('login.custom');
+/* LOGIN DE USUÁRIO*/
+
 Route::get('/cadastro_comercio', function () {
     return view('comercio');
 })->name('comercio');
@@ -38,6 +42,12 @@ Route::get('/configurar_comercio', function () {
 Route::get('/editar_usuario', function () {
     return view('editar');
 })->name('editar');
+
+// TESTE DE AUTENTICAÇÃO !!
+Route::get('/teste-auth', function () {
+    throw new AuthenticationException();
+});
+// TESTE DE AUTENTICAÇÃO !!
 
 // Breeze
 

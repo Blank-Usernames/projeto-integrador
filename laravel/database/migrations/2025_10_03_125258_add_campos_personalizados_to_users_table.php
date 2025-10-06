@@ -13,8 +13,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('telefone');
-            $table->string('local');
+            $table->string('telephone');
+            $table->string('city');
         });
     }
 
@@ -26,7 +26,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['telefone', 'local']);
+            $table->dropColumn(['telephone', 'city']);
         });
     }
 };

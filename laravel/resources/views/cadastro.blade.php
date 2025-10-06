@@ -9,6 +9,24 @@
         <section class="formUsuario">
             <div class="container mt-5">
                 <h2 class="mb-4">Cadastro de Usuário</h2>
+
+                <!-- CADASTRO CONCLUÍDO -->
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <form method="POST" action="{{route('cadastro.store')}}">
                     @csrf
                     <div class="mb-3">

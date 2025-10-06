@@ -52,7 +52,6 @@
 
                 </div>
 
-
                 <!-- LOGIN MODAL -->
                 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel"
                     aria-hidden="true">
@@ -65,28 +64,36 @@
                                     aria-label="Fechar"></button>
                             </div>
 
+
                             <div class="modal-body">
-                                <form>
+                                
+                                @if(session('error'))
+                                    <div class="alert alert-danger">
+                                        {{ session('error') }}
+                                    </div>
+                                @endif
+
+                                <form method="POST" action="{{route('login.custom')}}" autocomplete="off">
+                                    @csrf
                                     <div class="mb-3">
                                         <label for="emailInput" class="form-label">E-mail</label>
-                                        <input type="email" class="form-control" id="emailInput"
+                                        <input type="email" class="form-control" id="emailInput" name="email"
                                             placeholder="seuemail@exemplo.com">
                                     </div>
                                     <div class="mb-3">
                                         <label for="senhaInput" class="form-label">Senha</label>
-                                        <input type="password" class="form-control" id="senhaInput"
+                                        <input type="password" class="form-control" id="senhaInput" name="password"
                                             placeholder="Digite sua senha">
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary"
+                                        style="background-color: var(--cor01); border: none;">Entrar</button>
                                     </div>
                                 </form>
                             </div>
-
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary"
-                                    data-bs-dismiss="modal">Cancelar</button>
-                                <button type="submit" class="btn btn-primary"
-                                    style="background-color: var(--cor01); border: none;">Entrar</button>
-                            </div>
-
                         </div>
                     </div>
                 </div>
@@ -95,6 +102,15 @@
             </div>
         </nav>
     </header>
+    
+    @if(session('error'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+                loginModal.show();
+            });
+        </script>
+    @endif
 
     {{-- Conteúdo Vem aqui --}}
     @yield('conteudos')
