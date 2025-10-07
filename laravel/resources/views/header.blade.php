@@ -37,19 +37,29 @@
                         <li class="nav-item me-3">
                             <a class="nav-link" href="{{route('sobre')}}"><i class="bi bi-info-circle-fill m-1"></i>Sobre</a>
                         </li>
+                        @auth
                         <li class="nav-item me-3">
                             <a class="nav-link" href="{{route('editar')}}"><i class="bi bi-person-fill m-1"></i>Minha Conta</a>
                         </li>
+                        @endauth
                     </ul>
 
+                    
                     <div class="d-flex">
-                        <button type="button" class="btn btn-light m-2 btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#loginModal" id="loginButton">Entrar</button>
-                        <a href="{{route('cadastro')}}"><button type="button" class="btn btn-light m-2"
-                                id="signupButton">Cadastro</button>
-                        </a>
+                        @auth
+                            <!-- Usuário autenticado: mostrar botão de logout -->
+                            <form method="POST" action="{{route('logout.custom')}}">
+                                @csrf
+                                <button type="submit" class="btn btn-light m-2 btn-danger" id="logoutButton">Sair</button>
+                            </form>
+                            <a href="{{route('cadastro')}}"><button type="button" class="btn btn-light m-2" id="signupButton">Cadastro</button></a>
+                        @else
+                            <!-- Usuário não autenticado: mostrar botão de login e cadastro -->
+                            <button type="button" class="btn btn-light m-2 btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#loginModal" id="loginButton">Entrar</button>
+                            <a href="{{route('cadastro')}}"><button type="button" class="btn btn-light m-2" id="signupButton">Cadastro</button></a>
+                        @endauth
                     </div>
-
                 </div>
 
                 <!-- LOGIN MODAL -->

@@ -19,9 +19,10 @@
 
                 @if ($errors->any())
                     <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
+                        <strong>Erro ao cadastrar os dados:</strong>
+                        <ul class="mb-0">
+                            @foreach ($errors->all() as $erro)
+                                <li>{{ $erro }}</li>
                             @endforeach
                         </ul>
                     </div>
