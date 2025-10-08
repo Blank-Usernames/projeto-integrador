@@ -20,7 +20,7 @@
                         </div>
                         <div class="modal-footer border-0 d-flex justify-content-end">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-danger">Excluir</button>
+                            <form method="POST" action="{{route('deletar.usuario')}}">@csrf @method('DELETE')<button type="submit" class="btn btn-danger">Excluir</button></form>
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="senha" class="form-label" style="font-weight: bolder;">Senha Nova</label>
+                        <label for="senha" class="form-label" style="font-weight: bolder;">Senha</label>
                         <input type="password" class="form-control" id="senha" name="password" placeholder="Repita sua senha ou crie uma nova" required>
                         <div class="invalid-feedback">
                             Formato inválido. A senha deve ter: No mínimo 8 caractéres, 1 caractére especial e 1 número.
@@ -102,7 +102,7 @@
                     <div class="buttonsContainer">
                         <div class="buttonsForm">
                             <button type="submit" class="btn-custom">Salvar</button>
-                            <a href="{{route('editar')}}"><button type="button" class="btn-cancel">Cancelar</button></a>
+                            <a href="{{route('home')}}"><button type="button" class="btn-cancel">Cancelar</button></a>
                         </div>
                         <div class="buttonDelete">
                             <button type="button" class="btn-outline-delete" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">

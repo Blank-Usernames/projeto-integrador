@@ -124,6 +124,21 @@ class UserController extends Controller
 
         return redirect()->route('editar')->with('success', 'Dados atualizados com sucesso!');
     }
+
+    
+    public function deletar(Request $request)
+    {
+        $usuario = Auth::user();
+
+        Auth::logout(); // Desloga o usuário antes de deletar
+
+        $usuario->delete(); // Remove o usuário do banco
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('home')->with('success', 'Usuário deletado com sucesso.');
+    }
 };
 
 

@@ -291,9 +291,9 @@ cepInput.addEventListener("input", function () {
 // Validação para imagem
 const form = document.getElementById('cadastroForm');
 const imagemInput = document.getElementById('imagemComercio');
-let imagemValida = imagemInput.files.length > 0;
 
 form.addEventListener('submit', function (event) {
+    const imagemValida = imagemInput.files.length > 0;
 
     if (!form.checkValidity() || !imagemValida) {
         event.preventDefault();

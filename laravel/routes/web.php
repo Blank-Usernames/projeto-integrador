@@ -2,13 +2,14 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ComercioController;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 
-// Rotas
+// Rotas (UserController)
 
 Route::get('/', [UserController::class, 'index'])->name('home');
 
@@ -48,10 +49,28 @@ Route::get('/configurar_comercio', function () {
 
 
 /* EDIÇÃO DE USUÁRIO*/
-Route::get('/editar_usuario', [UserController::class, 'editar'])->middleware('auth')->name('editar');
+Route::get('/editar_usuario', [UserController::class, 'editar'])
+    ->middleware('auth')
+    ->name('editar');
 
-Route::post('/atualizar_usuario', [UserController::class, 'atualizar'])->middleware('auth')->name('atualizar.usuario');
+Route::post('/atualizar_usuario', [UserController::class, 'atualizar'])
+    ->middleware('auth')
+    ->name('atualizar.usuario');
 /* EDIÇÃO DE USUÁRIO*/
+
+
+/* DELETAR USUÁRIO */
+Route::delete('/deletar_usuario', [UserController::class, 'deletar'])
+    ->middleware('auth')
+    ->name('deletar.usuario');
+/* DELETAR USUÁRIO */
+
+// Rotas (ComercioController)
+
+Route::post('/comercio/cadastrar', [ComercioController::class, 'store'])
+    ->middleware('auth')
+    ->name('cadastrar.comercio');
+
 
 // Breeze
 
