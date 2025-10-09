@@ -118,177 +118,32 @@
             </div>
 
 
-            <!-- Card 1 -->
-            <div class="card shadow-sm border-0 rounded-4 card-horizontal" style="max-width: 600px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Imagem do comércio">
-                    </div>
-                    <div class="col-md-8 d-flex flex-column justify-content-between p-3">
-                        <p class="card-text text-muted mb-3">Descrição do comércio. Pode incluir localização, tipo de
-                            serviço, etc.</p>
 
-                        <div class="d-flex flex-wrap gap-2">
-                            <button type="button" class="btn-outline-orange" data-bs-toggle="modal"
-                                data-bs-target="#editarComercioModal">
-                                <i class="bi bi-pencil-square"></i> Editar
-                            </button>
-                            <button type="button" class="btn-outline-delete" data-bs-toggle="modal"
-                                data-bs-target="#confirmDeleteModal">
-                                <i class="bi bi-trash"></i> Deletar
-                            </button>
+            @foreach($comercios as $comercio)
+                <div class="card shadow-sm border-0 rounded-4 card-horizontal mb-4" style="max-width: 600px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{ asset('storage/'.$comercio->image) }}" class="card-img-top" style="height: 100%; object-fit: cover;" alt="Imagem do comércio">
+                        </div>
+                        <div class="col-md-8 d-flex flex-column justify-content-between p-3">
+                            <p class="card-text text-muted mb-3">
+                                {{ $comercio->description }}
+                            </p>
+
+                            <div class="d-flex flex-wrap gap-2">
+                                <button type="button" class="btn-outline-orange" data-bs-toggle="modal"
+                                    data-bs-target="#editarComercioModal">
+                                    <i class="bi bi-pencil-square"></i> Editar
+                                </button>
+                                <button type="button" class="btn-outline-delete" data-bs-toggle="modal"
+                                    data-bs-target="#confirmDeleteModal">
+                                    <i class="bi bi-trash"></i> Deletar
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-             <!-- Card 2 -->
-            <div class="card shadow-sm border-0 rounded-4 card-horizontal" style="max-width: 600px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Imagem do comércio">
-                    </div>
-                    <div class="col-md-8 d-flex flex-column justify-content-between p-3">
-                        <p class="card-text text-muted mb-3">Descrição do comércio. Pode incluir localização, tipo de
-                            serviço, etc.</p>
-
-                        <div class="d-flex flex-wrap gap-2">
-                            <button type="button" class="btn-outline-orange" data-bs-toggle="modal"
-                                data-bs-target="#editarComercioModal">
-                                <i class="bi bi-pencil-square"></i> Editar
-                            </button>
-                            <button type="button" class="btn-outline-delete" data-bs-toggle="modal"
-                                data-bs-target="#confirmDeleteModal">
-                                <i class="bi bi-trash"></i> Deletar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="card shadow-sm border-0 rounded-4 card-horizontal" style="max-width: 600px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Imagem do comércio">
-                    </div>
-                    <div class="col-md-8 d-flex flex-column justify-content-between p-3">
-                        <p class="card-text text-muted mb-3">Descrição do comércio. Pode incluir localização, tipo de
-                            serviço, etc.</p>
-
-                        <div class="d-flex flex-wrap gap-2">
-                            <button type="button" class="btn-outline-orange" data-bs-toggle="modal"
-                                data-bs-target="#editarComercioModal">
-                                <i class="bi bi-pencil-square"></i> Editar
-                            </button>
-                            <button type="button" class="btn-outline-delete" data-bs-toggle="modal"
-                                data-bs-target="#confirmDeleteModal">
-                                <i class="bi bi-trash"></i> Deletar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Card 4 -->
-            <div class="card shadow-sm border-0 rounded-4 card-horizontal" style="max-width: 600px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Imagem do comércio">
-                    </div>
-                    <div class="col-md-8 d-flex flex-column justify-content-between p-3">
-                        <p class="card-text text-muted mb-3">Descrição do comércio. Pode incluir localização, tipo de
-                            serviço, etc.</p>
-
-                        <div class="d-flex flex-wrap gap-2">
-                            <button type="button" class="btn-outline-orange" data-bs-toggle="modal"
-                                data-bs-target="#editarComercioModal">
-                                <i class="bi bi-pencil-square"></i> Editar
-                            </button>
-                            <button type="button" class="btn-outline-delete" data-bs-toggle="modal"
-                                data-bs-target="#confirmDeleteModal">
-                                <i class="bi bi-trash"></i> Deletar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Card 5 -->
-           <div class="card shadow-sm border-0 rounded-4 card-horizontal" style="max-width: 600px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Imagem do comércio">
-                    </div>
-                    <div class="col-md-8 d-flex flex-column justify-content-between p-3">
-                        <p class="card-text text-muted mb-3">Descrição do comércio. Pode incluir localização, tipo de
-                            serviço, etc.</p>
-
-                        <div class="d-flex flex-wrap gap-2">
-                            <button type="button" class="btn-outline-orange" data-bs-toggle="modal"
-                                data-bs-target="#editarComercioModal">
-                                <i class="bi bi-pencil-square"></i> Editar
-                            </button>
-                            <button type="button" class="btn-outline-delete" data-bs-toggle="modal"
-                                data-bs-target="#confirmDeleteModal">
-                                <i class="bi bi-trash"></i> Deletar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Card 6 -->
-            <div class="card shadow-sm border-0 rounded-4 card-horizontal" style="max-width: 600px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Imagem do comércio">
-                    </div>
-                    <div class="col-md-8 d-flex flex-column justify-content-between p-3">
-                        <p class="card-text text-muted mb-3">Descrição do comércio. Pode incluir localização, tipo de
-                            serviço, etc.</p>
-
-                        <div class="d-flex flex-wrap gap-2">
-                            <button type="button" class="btn-outline-orange" data-bs-toggle="modal"
-                                data-bs-target="#editarComercioModal">
-                                <i class="bi bi-pencil-square"></i> Editar
-                            </button>
-                            <button type="button" class="btn-outline-delete" data-bs-toggle="modal"
-                                data-bs-target="#confirmDeleteModal">
-                                <i class="bi bi-trash"></i> Deletar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 7 -->
-            <div class="card shadow-sm border-0 rounded-4 card-horizontal" style="max-width: 600px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Imagem do comércio">
-                    </div>
-                    <div class="col-md-8 d-flex flex-column justify-content-between p-3">
-                        <p class="card-text text-muted mb-3">Descrição do comércio. Pode incluir localização, tipo de
-                            serviço, etc.</p>
-
-                        <div class="d-flex flex-wrap gap-2">
-                            <button type="button" class="btn-outline-orange" data-bs-toggle="modal"
-                                data-bs-target="#editarComercioModal">
-                                <i class="bi bi-pencil-square"></i> Editar
-                            </button>
-                            <button type="button" class="btn-outline-delete" data-bs-toggle="modal"
-                                data-bs-target="#confirmDeleteModal">
-                                <i class="bi bi-trash"></i> Deletar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            @endforeach
 
 </main>
 

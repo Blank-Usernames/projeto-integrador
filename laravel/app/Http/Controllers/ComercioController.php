@@ -47,7 +47,7 @@ class ComercioController extends Controller
         $comercio->city = $request->city;
         $comercio->neighborhood = $request->neighborhood;
         $comercio->street = $request->street;
-        $comercio->streetNum = $request->street_number;
+        $comercio->street_number = $request->street_number;
         $comercio->CEP = $request->cep;
         $comercio->telephone = $request->telephone;
         $comercio->image = $imagePath;
@@ -55,5 +55,12 @@ class ComercioController extends Controller
         $comercio->save();
 
         return redirect()->back()->with('success', 'Comércio cadastrado com sucesso!');
+    }
+
+    
+    public function configurar()
+    {
+        $comercios = Comercio::where('user_id', Auth::id())->get();
+        return view('configurar', compact('comercios'));
     }
 }

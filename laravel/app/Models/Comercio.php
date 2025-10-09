@@ -19,7 +19,7 @@ class Comercio extends Model
         'city',
         'neighborhood',
         'street',
-        'streetNum',
+        'street_number',
         'image',
         'CEP',
         'telephone',

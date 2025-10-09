@@ -43,10 +43,6 @@ Route::get('/cadastro_comercio', function () {
     return view('comercio');
 })->name('comercio');
 
-Route::get('/configurar_comercio', function () {
-    return view('configurar');
-})->name('configurar');
-
 
 /* EDIÇÃO DE USUÁRIO*/
 Route::get('/editar_usuario', [UserController::class, 'editar'])
@@ -71,6 +67,9 @@ Route::post('/comercio/cadastrar', [ComercioController::class, 'store'])
     ->middleware('auth')
     ->name('cadastrar.comercio');
 
+Route::get('/configurar_comercio', [ComercioController::class, 'configurar'])
+    ->middleware('auth')
+    ->name('configurar');
 
 // Breeze
 

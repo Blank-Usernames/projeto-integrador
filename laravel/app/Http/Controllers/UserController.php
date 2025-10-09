@@ -81,7 +81,6 @@ class UserController extends Controller
     }
 
     
-    
     public function atualizar(Request $request)
     {
         $usuario = Auth::user();
